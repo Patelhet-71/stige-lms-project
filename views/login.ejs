@@ -25,7 +25,11 @@
       <input type="text" name="email" required>
       <div class="email error"></div>
       <label for="password">Password</label>
-      <input type="password" name="password" required>
+      <div class="passToggle">
+        <input type="password" name="password" id="passToggle" required>
+        <i class="fa fa-eye" aria-hidden="true" id="passVisible" onclick="Toggle()"></i>
+        <i class="fa fa-eye-slash" aria-hidden="true" id="passNotVisible" onclick="Toggle()"></i>
+      </div>
       <div class="password error"></div>
       <button class="login-btn">Login</button>
       <p>Don't have an account ? <a href="/signup">Register</a> </p>
@@ -33,6 +37,29 @@
   </div>
 
   <script>
+
+    // Change the type of input to password or text
+    var eyeOn = document.getElementById("passVisible");
+    var eyeOff = document.getElementById("passNotVisible");
+    eyeOff.style.display = "none";
+    function Toggle() {
+      var temp = document.getElementById("passToggle");
+        if (temp.type === "password") {
+          temp.type = "text";
+          eyeOn.style.display = "none";
+          eyeOff.style.display = "block";
+
+        }
+        else {
+          temp.type = "password";
+          eyeOn.style.display = "block";
+          eyeOff.style.display = "none";
+
+        }
+    }
+
+
+
     const form = document.querySelector('form');
     const emailError = document.querySelector('.email.error');
     const passwordError = document.querySelector('.password.error');

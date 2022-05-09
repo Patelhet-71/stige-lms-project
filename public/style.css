@@ -6,6 +6,27 @@
     box-sizing: border-box;
     
 }
+.passToggle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.passToggle #passToggle{
+    flex-basis: 93%;
+}
+
+.passVisible,
+.passNotVisible
+{
+    flex-basis: 7%;
+    /* width: 25px; */
+    /* height: 25px; */    
+}
+
+.passToggle i{
+    font-size: 25px;
+}
+
 
 body{
     font-family: Montserrat, sans-serif;
